@@ -4,6 +4,37 @@ var usuarioModel = require("../models/usuarioModel");
 
 
 
+function logar(req, res) {
+    var email = req.body.emailServer;
+    var senha = req.body.senhaServer;
+
+
+    // Faça as validações dos valores 
+ 
+    if (email == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (senha == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.logar(email, senha)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
 
 
 
@@ -48,6 +79,6 @@ function cadastrar(req, res) {
 }
 
 module.exports = {
-    autenticar,
+    logar,
     cadastrar
 }

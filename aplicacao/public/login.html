@@ -41,7 +41,7 @@ function logar(){
     var emailVar = ipt_loginEmail.value;
     var senhaVar = ipt_loginSenha.value;
 
-fetch("/usuarios/logar", {
+fetch("/usuario/logar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -63,6 +63,7 @@ fetch("/usuarios/logar", {
                     sessionStorage.ID_USUARIO = json.id;
 
 
+
                     setTimeout(function () {
                         window.location = "./start.html";
                     }, 1000); // apenas para exibir o loading
@@ -75,7 +76,6 @@ fetch("/usuarios/logar", {
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
                 });
             }
 

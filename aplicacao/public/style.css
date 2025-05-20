@@ -335,20 +335,19 @@ justify-content: space-between;
   border-radius: 2%;
 }
 
-.cadastro-icone button {
+.cadastro-icone select {
   width: 70%;
-  height: 30px;
+  height: 80px;
   border-radius: 2px;
   background-color: transparent;
   border: 0px;
 
 
-  color: #ffffff;
-  text-shadow: 3px 3px 2px #0a58b1;
+  color: #000000; 
   font-style: italic;
   text-align: center;
-  font-family: Meal;
-  font-size: 30px;
+  font-family: Mistral;
+  font-size: 50px;
   text-decoration: underline;
 }
 
@@ -564,6 +563,7 @@ justify-content: space-between;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  align-items: center;
 }
 
 .menu-sobreposta {
@@ -588,11 +588,45 @@ justify-content: space-between;
   margin-left: 150px;
 }
 
+
 .menu-button {
   width: 100vw;
   height: 700px;
   display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background: linear-gradient(270deg, rgba(139, 139, 139, 0.7) 15.87%, rgba(255, 255, 255, 0.5) 24.04%, rgba(75, 68, 68, 0.0) 96.15%);
+
+}
+
+.menu-button button{
+
+  display: flex;
+  background-color: transparent;
+  border: transparent;
+  color: #000000;
+  font-size: 110px;
+  font-family: Mistral;
+  text-align: center;
+   text-shadow: 0px 0px 4px rgb(255, 0, 0);
 
 
 
+
+}
+.menu-button :nth-child(1) {
+ padding-right: 350px;
+}
+.menu-button :nth-child(2) {
+  padding-right: 150px;
+}
+.menu-button :nth-child(3) {
+  padding-right: 100px;
+}
+.menu-button :nth-child(4) {
+  padding-right: 250px; 
+}
+.menu-button :nth-child(5) {
+padding-right: 350px;
 }

@@ -12,29 +12,64 @@
     <section class="menu-main">
 
           <div class="menu-sobreposta">
-            <img class="menu-sobreposta" src="assets/lady-hd-index.png">
-            <img class="menu-sobreposta" src="assets/dante-hd-index.png ">
+            <img class="menu-sobreposta" src="assets/lady-hd-menu.png">
+            <img class="menu-sobreposta" src="assets/dante-hd-menu.png">
         </div>
 
-        <div>
             <div class='menu-icon'>
                 <img class="" src="">
             </div>
-            <img src="">
-        </div>
+        
 
       
 
-        <div>
-            <button onclick="telaMissao()">Missôes</button>
-            <button onclick="telaGaleria()">Galeria</button>
-            <button onclick="telaDesempenho()">Desempenho</button>
-            <button onclick="telaMusica()">Musica</button>
-            <button onclick="TelaSobreMim()">Sobre mim</button>
+        <div class="menu-button">
+            <button class="menu-button" onclick="telaMissao()">Missões</button>
+            <button class="menu-button" onclick="telaDesempenho()">Desempenho</button>
+            <button class="menu-button" onclick="telaGaleria()">Galeria</button>
+            <button class="menu-button" onclick="telaMusica()">Musica</button>
+            <button class="menu-button" onclick="TelaSobreMim()">Sobre mim</button>
         </div>
 
 
     </section>
 </body>
+
+<script>
+
+function telaMissao(){
+ window.location = "./missao.html" 
+}
+
+function telaDesempenho(){
+window.location = "./dashboard/dashboard.html";
+
+
+}
+function telaGaleria(){
+window.location = "./galeria.html";
+
+}
+function telaMusica(){
+window.location = "./musica.html";
+
+}
+function TelaSobreMim(){
+window.location = "./sobre_mim.html";
+
+
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+
 
 </html>
