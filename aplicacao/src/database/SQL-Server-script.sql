@@ -1,9 +1,8 @@
 
-CREATE DATABASE dmc;
 USE dmc;
 
 CREATE TABLE IF NOT EXISTS usuario(
-  id  INT NOT NULL,
+  id  INT NOT NULL AUTO_INCREMENT,
   nome VARCHAR(90) NULL,
   email VARCHAR(90) NULL,
   telefone VARCHAR(9) NULL,
@@ -13,7 +12,7 @@ CREATE TABLE IF NOT EXISTS usuario(
   );
 
 CREATE TABLE IF NOT EXISTS missao(
-  id INT NOT NULL,
+  id INT NOT NULL AUTO_INCREMENT,
   fkusuario INT NOT NULL,
   numero_missao VARCHAR(2) NULL,
   secreta INT NULL,
@@ -27,7 +26,15 @@ CREATE TABLE IF NOT EXISTS missao(
   CONSTRAINT chk_numero_missao CHECK(numero_missao >= 1 or numero_missao <= 20)
   );
 
-drop user if exists dmc;
+alter table usuario add column ft_icon VARCHAR(250);
+
+alter table missao add column damage VARCHAR(45);
+alter table missao add column completa CHAR(1) DEFAULT '0';
+select * from usuario;
+
+alter table usuario rename column ft_icon to icone;
+
+
 create user dmc identified by 'dmc123';
-grant all privileges on dmc to 'dmc';
+grant all privileges on dmc.* to 'dmc';
 

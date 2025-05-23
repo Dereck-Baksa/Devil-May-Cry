@@ -10,16 +10,16 @@
 
 <body>
     <section>
-        <div>
+        <div id="div_input">
             <input type="text" id="ipt_time">
-            <input type="text" id="ipt_">
-            <input type="text" id="ipt_">
-            <input type="text" id="ipt_">
-            <input type="text" id="ipt_">
+            <input type="text" id="ipt_orbs">
+            <input type="text" id="ipt_stylish">
+            <input type="text" id="ipt_item_usado">
+            <input type="text" id="ipt_danoRecebido">`
         </div>
+        
         <div>
             <select id="slc_missao" onchange="slc_missao()">
-                <option value="#">selecione uma missão</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -49,10 +49,10 @@
 </section>
 </body>
 <script>
+    var secreta = false
 
 
     function check() {
-        var secreta = false
         secreta = chk_secreta.checked
         console.log(secreta)
 
@@ -60,7 +60,6 @@
 
         if (secreta) {
             slc_missao.innerHTML = `
-    <option value="#">selecione uma missão</option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -72,12 +71,16 @@
     <option value="9">9</option>
     <option value="10">10</option>
     <option value="11">11</option>
-    <option value="12">12</option>
-    
+    <option value="12">12</option>   
 `
+
+div_input.innerHTML = `
+            <input type="text" id="ipt_time">
+            <input type="text" id="ipt_orbs">`
+
+
         } else {
             slc_missao.innerHTML = `
-<option value="#">selecione uma missão</option>
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
@@ -97,8 +100,16 @@
 <option value="17">17</option>
 <option value="18">18</option>
 <option value="19">19</option>
-<option value="20">20</option>`
+<option value="20">20</option>
 
+`
+
+div_input.innerHTML = `
+            <input type="text" id="ipt_time">
+            <input type="text" id="ipt_orbs">
+            <input type="text" id="ipt_stylish">
+            <input type="text" id="ipt_item_usado">
+            <input type="text" id="ipt_danoRecebido">`
         }
     }
 

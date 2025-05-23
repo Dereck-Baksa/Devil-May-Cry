@@ -14,19 +14,18 @@
         <div class="cadastro-line1">
 
             <div class="cadastro-icone">
-                <div>
-                    <img class="cadastro-icone-img" src="assets/icons/lady-devil-may.jpg">
+                <div id="div_icon">
+                     <img class="cadastro-icone-img" src="assets/icons/lady-devil-may.jpg">
                 </div>
                 <h3>Icone de perfil</h3>
-                <select id="slc_icon">
-                    <option value="#">Selecione</option>
-                    <option value="">Dante</option>
-                    <option value="">Virgil</option>
-                    <option value="">Lady</option>
-                    <option value="">Arkhan</option>
-                    <option value="">Cerberus</option>
-                    <option value="">Nevan</option>
-                    
+                <select onchange="trocarIcon()" id="slc_icon">
+                    <option value="assets/icons/lady-devil-may.jpg">Lady</option>
+                    <option value="assets/icons/dante-devil-may.jpg">Dante</option>
+                    <option value="assets/icons/virgil-devil-may.jpg">Virgil</option>
+                    <option value="assets/icons/arkhan-devil-may.jpg">Arkhan</option>
+                    <option value="assets/icons/cerberus-devil-may.jpg">Cerberus</option>
+                    <option value="assets/icons/nevan-devil-may.png">Nevan</option>
+                    <option value="assets/icons/jester-devil-may.jpg">jester</option>
                 </select>
             </div>
 
@@ -55,6 +54,11 @@
     </section>
 </body>
 <script>
+    function trocarIcon(){
+        var icone = slc_icon.value
+           div_icon.innerHTML = `<img class="cadastro-icone-img" src="${icone}">`
+    }
+
 
     function cadastrar() {
         
@@ -63,13 +67,14 @@
         var telefoneVar = ipt_telefoneCadastro.value;
         var senhaVar = ipt_senhaCadastro.value;
         var confirmacaoSenhaVar = ipt_confirmarSenha.value;
-        
+        var iconeVar = slc_icon.value;
         
         // Verificando se há algum campo em branco
         if (
       nomeVar == "" ||
       emailVar == "" ||
       telefoneVar == "" ||
+      iconeVar  == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" 
     ){
@@ -88,7 +93,8 @@
             nomeServer: nomeVar,
             emailServer: emailVar,
             telefoneServer: telefoneVar,
-            senhaServer: senhaVar
+            senhaServer: senhaVar,
+            iconeServer: iconeVar
         }),
     })
     .then(function (resposta) {
