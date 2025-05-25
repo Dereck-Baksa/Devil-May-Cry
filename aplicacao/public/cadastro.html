@@ -47,19 +47,24 @@
             
             </div>
         </div>
-
+        
         <div class="cadastro-line2">
-            <button onclick="cadastrar()">Cadastrar</button>
+            <button onclick="chamarOrdemDeCadastro()">Cadastrar</button>
         </div>
     </section>
 </body>
 <script>
     function trocarIcon(){
         var icone = slc_icon.value
-           div_icon.innerHTML = `<img class="cadastro-icone-img" src="${icone}">`
+        div_icon.innerHTML = `<img class="cadastro-icone-img" src="${icone}">`
     }
-
-
+    
+    function chamarOrdemDeCadastro(){
+        cadastrar()
+        buscarId()
+        cadastroMissao()
+    }
+    
     function cadastrar() {
         
         var nomeVar = ipt_nomeCadastro.value;
@@ -71,40 +76,83 @@
         
         // Verificando se há algum campo em branco
         if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      telefoneVar == "" ||
-      iconeVar  == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == "" 
-    ){
-        alert('algum campo está vazio')
+            nomeVar == "" ||
+            emailVar == "" ||
+            telefoneVar == "" ||
+            iconeVar  == "" ||
+            senhaVar == "" ||
+            confirmacaoSenhaVar == "" 
+        ){
+            alert('algum campo está vazio')
+            
+            return false;
+        }
         
-        return false;
-    }
+        // Enviando o valor da nova input
+        fetch("/usuario/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                telefoneServer: telefoneVar,
+                senhaServer: senhaVar,
+                iconeServer: iconeVar
+            }),
+        })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+            
+            if (resposta.ok) { 
+            console.log('cadastrou')    
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
+        .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
     
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
+    return false;
+}
+buscarId()
+
+function buscarId(){
+    var emailVar = ipt_emailCadastro.value;
+    
+    fetch(`/usuario/buscarID/${emailVar}`, { cache: 'no-store' })
+    .then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                let id = resposta.map(item => item.id);
+                cadastroMissao(id)
+            });
+        }
+    });
+}
+
+
+
+function cadastroMissao(id){
+    fetch("/usuario/cadastrarMissao", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            nomeServer: nomeVar,
-            emailServer: emailVar,
-            telefoneServer: telefoneVar,
-            senhaServer: senhaVar,
-            iconeServer: iconeVar
+            idServer: id
         }),
     })
     .then(function (resposta) {
         console.log("resposta: ", resposta);
         
-        if (resposta.ok) {         
+        if (resposta.ok) {        
             setTimeout(() => {
                 window.location = "login.html";
             }, "2000");
-    
+            
         } else {
             throw "Houve um erro ao tentar realizar o cadastro!";
         }
@@ -114,7 +162,10 @@
     });
     
     return false;
-}
+    
+    
+    
+} 
 
 
 </script>
