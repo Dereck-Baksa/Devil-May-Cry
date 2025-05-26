@@ -61,8 +61,6 @@
     
     function chamarOrdemDeCadastro(){
         cadastrar()
-        buscarId()
-        cadastroMissao()
     }
     
     function cadastrar() {
@@ -106,7 +104,8 @@
             console.log("resposta: ", resposta);
             
             if (resposta.ok) { 
-            console.log('cadastrou')    
+            console.log('cadastrou') 
+            buscarId()
             } else {
                 throw "Houve um erro ao tentar realizar o cadastro!";
             }
@@ -117,7 +116,7 @@
     
     return false;
 }
-buscarId()
+
 
 function buscarId(){
     var emailVar = ipt_emailCadastro.value;
@@ -125,8 +124,10 @@ function buscarId(){
     fetch(`/usuario/buscarID/${emailVar}`, { cache: 'no-store' })
     .then(function (response) {
         if (response.ok) {
-            response.json().then(function (resposta) {
-                let id = resposta.map(item => item.id);
+            response.json().then(function (response) {
+                console.log(response)
+                let id = response.map(item => item.id);
+
                 cadastroMissao(id)
             });
         }

@@ -8,19 +8,22 @@
     <title>Start</title>
 </head>
 
-<body>
+<body onkeydown="start()">
 <section class="start-main">
 
     <img src="assets/logo_dmc-3-special.png">
-    <button onkeyup="start()">Precione <span style="color: rgb(0, 0, 163);">QUALQUER TECLA</span> para iniciar</button>
+    <button >Precione<span style="color: rgb(0, 0, 163);">QUALQUER TECLA</span> para iniciar</button>
 
     
-</section>    
+</section>
 </body>
 <script>
-    function start(){
-    window.location = "./menu.html";
+    console.log(sessionStorage.ICON)
     
+    function start(){
+       setTimeout(() => {
+    window.location = "menu.html";
+    }, "2000");
     }
     
 

@@ -10,32 +10,54 @@
 
 <body>
     <section class="menu-main">
-
+        
+        
           <div class="menu-sobreposta">
             <img class="menu-sobreposta" src="assets/lady-hd-menu.png">
             <img class="menu-sobreposta" src="assets/dante-hd-menu.png">
         </div>
-
-            <div class='menu-icon'>
-                <img class="" src="">
-            </div>
+<div>
+<div class="perfil">
+    <div class="perfil-icone"  id="img_icone">
         
+        
+    </div>
+</div>
 
-      
+    
+    
+    
+    
 
-        <div class="menu-button">
-            <button class="menu-button" onclick="telaMissao()">Missões</button>
-            <button class="menu-button" onclick="telaDesempenho()">Desempenho</button>
-            <button class="menu-button" onclick="telaGaleria()">Galeria</button>
-            <button class="menu-button" onclick="telaMusica()">Musica</button>
-            <button class="menu-button" onclick="TelaSobreMim()">Sobre mim</button>
-        </div>
-
+    <div class="menu-button">
+        <button class="menu-button" onclick="telaMissao()">Missões</button>
+        <button class="menu-button" onclick="telaDesempenho()">Desempenho</button>
+        <button class="menu-button" onclick="telaGaleria()">Galeria</button>
+        <button class="menu-button" onclick="telaMusica()">Musica</button>
+        <button class="menu-button" onclick="TelaSobreMim()">Sobre mim</button>
+    </div>
+    
+</div>
 
     </section>
 </body>
 
 <script>
+    console.log(sessionStorage.ICON)
+    
+function perfil(){
+    var icone = sessionStorage.ICON;
+    var nome = sessionStorage.NOME_USUARIO;
+    console.log(nome);
+     console.log(icone);
+    img_icone.innerHTML = `<img class="perfil" src="${icone}">
+                            <p class="perfil-p">${nome}</p>
+    `
+    
+    }
+perfil()
+
+
 
 function telaMissao(){
  window.location = "./missao.html" 
