@@ -6,10 +6,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 
 <body>
+    <section class="dashboard-main">
+        <div id="div_navBar">
 
+        </div>
+        <div id="div_graficos" class="dashboard-graficos">
+
+
+            <div id="div_graficoGeral" class="grafico-geral">
+                <canvas id="graficoGeral"></canvas>
+
+            </div>
+
+
+            <div class="grafico-missao" id="div_lista_de_missoe">
+                <select name="slc_missoes">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+                <canvas id="graficoMissao"></canvas>
+            </div>
+
+
+
+
+
+        </div>
+        <div id="div_kpi">
+
+        </div>
+    </section>
 </body>
+<script>
+    const ctx = document.getElementById('graficoGeral');
+    const ctx1 = document.getElementById('graficoMissao');
+    var labelGeral = [170, 50, 110, 220, 240, 80, 110, 190, 70, 130, 60, 160, 40, 90, 120, 40, 150, 210, 70, 180]
+    var labelMissao = [50, 20, 40, 40, 40]
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [' Missão 1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+                '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'
+            ],
+            datasets: [{
+                label: 'desempenho',
+                data: labelGeral,
+                borderWidth: 4,
+                pointRadius: 5,
+                backgroundColor: '#ff1900',
+                borderColor: '#111111',
+                color: '#111111',
+                tension: 0.2,
+
+            },
+            ]
+        },
+        options: {
+            scales: {
+                x: {
+                    grid: {
+                        color: '#FF0000',
+                        color: '#ff0000',
+                        ticks: {
+                            font: {
+                                size: 16
+                            }
+                        }
+                    }
+                },
+                y: {
+                    grid: {
+                        color: '#FF0000',
+                        ticks: {
+                            color: '#ff0000',
+                            font: {
+                                size: 16
+                            }
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: '#ff0000',
+                        font: {
+                            size: 16,
+
+                        }
+                    }
+                }
+            }
+        }
+    });
+    new Chart(ctx1, {
+        type: 'radar',
+        data: {
+            labels: ['TIME', 'ORBS', 'STYLISH', 'DAMAGE', 'ITEM USED'
+            ],
+            datasets: [{
+                label: 'desempenho',
+                data: labelMissao,
+                borderWidth: 4,
+                pointRadius: 5,
+                backgroundColor: 'rgba(255, 25, 0,0.2)',
+                borderColor: '#111111',
+                color: '#111111',
+                tension: 0,
+
+            }
+        ]
+        },
+        options: {
+            scales: {
+                r: {
+                    grid: {
+                        color: '#FF0000',
+                        angleLines: {
+                            color: '#FF0000',
+                            display:true
+
+                        }, ticks: {
+                            color: 'blue',
+                            font: {
+                                weight: 'bold'
+                            }
+                        },
+                        
+                    },
+                    suggestedMin: 10,
+                    suggestedMax: 50,
+                    
+                },
+            },
+        },
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    color: '#ff0000',
+                    font: {
+                        size: 16,
+
+                    }
+                }
+            }
+        }
+    }
+    );
+
+</script>
 
 </html>

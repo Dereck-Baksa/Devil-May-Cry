@@ -702,16 +702,17 @@ justify-content: center;
   width: 100px;
   height: 100px;
   position: absolute;
-  left: 440px;
-  top:65px;
+  left: 415px;
+  top:70px;
 
 }
 
 .missao-perfil-p{
   margin: 4px;
-  margin-top: 12px;
-  font-family: highway gothic condensend;
-  color: #0004d9;
+  margin-top: 50px;
+  font-family:Mistral;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgb(0, 17, 255);
   font-size: 42px;
 }
 
@@ -756,12 +757,110 @@ flex-direction: column;
 }
 
 
+.missao-input label{
+
+  font-family: Mistral;
+color: rgb(255, 248, 248);
+text-shadow: 1px 1px 10px rgb(0, 17, 255);
+font-size: 50px;
+
+}
+
+.missao-button{
+margin-left:25px ;
+width:  700px;
+height: 70px;
+background-color: rgb(59, 9, 9);
+font-family: Mistral;
+color: rgb(255, 248, 248);
+text-shadow: 1px 1px 10px rgb(0, 17, 255);
+font-size: 50px;
+border: 2px solid red;
+border-radius: 10px;
+}
+
+.missao-button:active{
+margin-left:25px ;
+width:  700px;
+height: 70px;
+background-color: rgb(255, 255, 255);
+font-family: Mistral;
+color: rgb(0, 0, 0);
+text-shadow: 1px 1px 10px rgb(255, 0, 0);
+font-size: 50px;
+border: 2px solid rgb(60, 0, 255);
+border-radius: 10px;
+}
+
+
+.missao-button-secreta{
+  margin-top: 10px;
+margin-left:25px ;
+width:  300px;
+height: 100px;
+background-color: rgb(59, 9, 9);
+font-family: Mistral;
+color: rgb(255, 248, 248);
+text-shadow: 1px 1px 10px rgb(0, 17, 255);
+font-size: 50px;
+border: 2px solid red;
+border-radius: 10px;
+}
+
+.missao-button-secreta:active{
+background-color: rgb(255, 255, 255);
+font-family: Mistral;
+color: rgb(0, 0, 0);
+text-shadow: 1px 1px 10px rgb(255, 0, 0);
+font-size: 50px;
+border: 2px solid rgb(60, 0, 255);
+border-radius: 10px;
+}
+
+
+
+
+.missao-ipt-div{
+width: 600px;
+height: 100px;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+}
+
+.missao-chk-label{
+font-family: Mistral;
+color: rgb(255, 248, 248);
+text-shadow: 1px 1px 10px rgb(0, 17, 255);
+font-size: 100px;
+} 
+
+.missao-chk:checked{
+  -webkit-appearance: none;
+  background-size: cover;
+  background-image: url(assets/estrela_DMC.webp);
+  
+}
+
+.missao-chk {
+  -webkit-appearance: none;
+  background-size: cover;
+  border: 2px solid rgb(229, 255, 126);
+  background-color:#000000;
+  width: 200px; 
+  border-radius: 10px;
+  height: 200px;
+  margin-left:10px ;
+  margin-right:10px ;
+}
+
 .missao-index{
 height: 800px;
 width: 900px;
 display: flex;
 align-items: center;
 justify-content: center;
+margin-left: 50px;
 }
 
 .missao-img label{
@@ -780,7 +879,7 @@ margin-top: -50px;
 
 
 
-.missao-img select{
+#slc_missao_numero{
   align-self: flex-end;
   border: transparent;
 width: 100px;
