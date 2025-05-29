@@ -1,0 +1,167 @@
+@font-face {
+  font-family: highway gothic condensend;
+  src: url(assets/HWYGCOND.TTF);
+}
+
+@font-face {
+  font-family: Mistral;
+  src: url(assets/MISTRAL.TTF);
+}
+
+.dashboard-main{
+width: 100vw;
+height: 100vh;
+background-size:cover;
+background-repeat: no-repeat;
+background-image: url(assets/backgroud-dash.jpg);
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.dashboard-navbar{
+width: 100vw;
+height: 150px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+background: linear-gradient(270deg, rgb(0, 0, 0) 1.87%, rgb(40, 41, 107) 11.87%, rgb(212, 14, 14) 50.04%, rgb(87, 10, 10) 80.15%);
+}
+.dashboard-navbar-img{
+width: 150px;
+height: 150px;
+
+}
+
+
+
+.dashboard-icon-container{
+  width: 200px;
+  height: 150px;
+  border: 3px solid rgb(76, 0, 255);
+  background-color: rgb(23, 1, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-navbar-icon{
+height: 100px;
+width: 100px;
+border-radius: 100px;
+margin-top: 10px;
+border: 3px solid rgb(76, 0, 255);
+}
+.dashboard-navbar-nome{
+height: 50px;
+width: 100px;
+font-family: Mistral;
+font-size: 27px;
+color: blue;
+align-items: center;
+}
+
+.dashboard-navbar-icon{
+height: 100px;
+border-radius: 100px;
+border: 3px solid rgb(76, 0, 255);
+
+}
+
+.dashboard-graficos{
+height:500px;
+width: 100vw;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+
+.grafico-geral{
+width: 900px;
+padding: 10px;
+background-color:rgb(0, 0, 0) ;
+border-radius: 3px;
+border: 10px solid rgb(83, 14, 14);
+text-shadow: 1px 1px 1px black;
+}
+.grafico-missao{
+width: 410px;
+padding: 10px;
+background-color:rgb(0, 0, 0) ;
+border-radius: 3px;
+border: 10px solid rgb(83, 14, 14);
+text-shadow: 1px 1px 1px black;
+}
+
+.grafico-missao select{
+width: 100px;
+padding: 10px;
+background-color:rgb(0, 0, 0) ;
+border-radius: 3px;
+border: 1px solid rgb(83, 14, 14);
+text-shadow: 1px 1px 1px black;
+font-family: highway gothic condensend;
+font-size: 20px;
+color: rgb(255, 0, 0);
+}
+
+.kpi{
+width: 100vw;
+height: 290px;
+background-color:transparent;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.kpi-main{
+width: 900px;
+height: 250px;
+background-color: rgb(5, 5, 74);
+border: 10px solid rgb(5, 5, 254);
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.kpi-main h1{
+color: red;
+font-size:80px;
+font-family: Mistral;
+text-align: center;
+text-shadow: 1px 1px 10px white;
+}
+
+
+.kpi-main p{
+color: rgb(255, 196, 0);
+font-size:40px;
+font-family: Mistral;
+text-align: center;
+text-shadow: 1px 1px 10px white;
+}
+
+.kpi-container{
+   width:900px;
+   height: 30px;
+   display: flex;
+   justify-content: space-evenly;
+  align-items: center;
+}
+
+.kpi-missao-secreta{
+width: 30px;
+margin-top: 35px;
+height: 30px;
+border: 2px solid rgb(0, 195, 255);
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: Mistral;
+font-size: 35px;
+color: rgb(255, 0, 0);
+}

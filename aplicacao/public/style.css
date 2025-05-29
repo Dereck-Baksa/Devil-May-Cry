@@ -699,6 +699,7 @@ justify-content: center;
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 1000px;
+  border: 1px solid blue;
   width: 100px;
   height: 100px;
   position: absolute;
@@ -714,6 +715,7 @@ justify-content: center;
   color: #ffffff;
   text-shadow: 1px 1px 3px rgb(0, 17, 255);
   font-size: 42px;
+  
 }
 
 
@@ -801,7 +803,7 @@ height: 100px;
 background-color: rgb(59, 9, 9);
 font-family: Mistral;
 color: rgb(255, 248, 248);
-text-shadow: 1px 1px 10px rgb(0, 17, 255);
+text-shadow: 1px 1px 10px rgb(255, 255, 255);
 font-size: 50px;
 border: 2px solid red;
 border-radius: 10px;
@@ -863,36 +865,62 @@ justify-content: center;
 margin-left: 50px;
 }
 
-.missao-img label{
+
+.missao-img-label {
+  width: 400px;
+  text-align: center;
   font-family: Mistral;
 color: rgb(0, 0, 255);
-font-size: 50px;
-margin-top: -80px;
+font-size: 40px;
+margin-top: -55px;
 }
 
-.missao-img {
-  font-family: Mistral;
-color: rgb(0, 0, 255);
-font-size: 25px;
-margin-top: -50px;
+
+.missao-img-input {
+  -webkit-appearance: none;
+  margin-top: 10px;
+  width: 10px;
+  height: 500px;
+   border: 10px solid rgb(255, 0, 0);
+  border-radius: 100px;
+}
+.missao-img-input:checked{
+  -webkit-appearance: none;
+  margin-top: 10px;
+  width: 10px;
+  height: 500px;
+   border: 10px solid rgb(21, 0, 255);
+  border-radius: 100px;
 }
 
 
 
 #slc_missao_numero{
+  margin-left: 700px;
+  border: transparent;
+width: 200px;
+font-size: 24px;
+background-color: #000000;
+font-family: Mistral;
+color: red;
+border: 2px solid blue;
+}
+
+#slc_missao_numero option:checked{
   align-self: flex-end;
   border: transparent;
-width: 100px;
-font-size: 50px;
-background-color: #000000;
-font-family: meal;
-color: red;
+background-color: #ffffff;
+font-family: Mistral;
+color: rgb(51, 0, 255);
 }
+
+
+
 
 .missao-img{
 height: 600px;
-width: 900px;
-margin-left: 500px;
+width: 100px;
+margin-left: 400px;
 display: flex;
 align-items: center;
 flex-direction: column;

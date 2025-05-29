@@ -10,43 +10,43 @@
 
 <body>
     <section class="missao-main">
-        <div class="voltar-menu" >
-        <button onclick="voltarMenu()"></button>
+        <div class="voltar-menu">
+            <button onclick="voltarMenu()"></button>
         </div>
-            <div>
+        <div>
             <div class="missao-div">
 
                 <div class="missao-index">
                     <div id="img_missao_index" class="missao-perfil-icone"></div>
                     <div class="missao-img">
                         <div id="div_imagem_missao">
-                            <img  src="assets/missoes/DMC3_Mission_1.jpg">
+                            <img src="assets/missoes/DMC3_Mission_1.jpg">
                         </div>
-                        
+
                         <select id="slc_missao_numero" onchange="slc_missao()">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
+                            <option value="1">Missão 1</option>
+                            <option value="2">Missão 2</option>
+                            <option value="3">Missão 3</option>
+                            <option value="4">Missão 4</option>
+                            <option value="5">Missão 5</option>
+                            <option value="6">Missão 6</option>
+                            <option value="7">Missão 7</option>
+                            <option value="8">Missão 8</option>
+                            <option value="9">Missão 9</option>
+                            <option value="10">Missão 10</option>
+                            <option value="11">Missão 11</option>
+                            <option value="12">Missão 12</option>
+                            <option value="13">Missão 13</option>
+                            <option value="14">Missão 14</option>
+                            <option value="15">Missão 15</option>
+                            <option value="16">Missão 16</option>
+                            <option value="17">Missão 17</option>
+                            <option value="18">Missão 18</option>
+                            <option value="19">Missão 19</option>
+                            <option value="20">Missão 20</option>
                         </select>
-                        <input type="checkbox" onchange="check()" id="chk_secreta">
-                        <label for="chk_secreta">Missão secreta</label>
+                        <input class="missao-img-input" type="checkbox" onchange="check()" id="chk_secreta">
+                        <label class="missao-img-label" for="chk_secreta">Missão secreta</label>
 
                     </div>
 
@@ -66,51 +66,51 @@
                     <div class="missao-ipt-div">
                         <label for="slc_orb">Orbs</label>
                         <select id="slc_orb">
-                            <option><span class="s">S</span></option>
-                            <option><span class="a">A</span></option>
-                            <option><span class="b">B</span></option>
-                            <option><span class="c">C</span></option>
-                            <option><span class="d">D</span></option>
+                            <option value="50"><span class="s">S</span></option>
+                            <option value="40"><span class="a">A</span></option>
+                            <option value="30"><span class="b">B</span></option>
+                            <option value="20"><span class="c">C</span></option>
+                            <option value="10"><span class="d">D</span></option>
                         </select>
                     </div>
                     <div class="missao-ipt-div">
                         <label for="slc_stylish">Stylish PTS</label>
                         <select id="slc_stylish">
-                            <option><span class="s">S</span></option>
-                            <option><span class="a">A</span></option>
-                            <option><span class="b">B</span></option>
-                            <option><span class="c">C</span></option>
-                            <option><span class="d">D</span></option>
+                            <option value="50"><span class="s">S</span></option>
+                            <option value="40"><span class="a">A</span></option>
+                            <option value="30"><span class="b">B</span></option>
+                            <option value="20"><span class="c">C</span></option>
+                            <option value="10"><span class="d">D</span></option>
                         </select>
                     </div>
                     <div class="missao-ipt-div">
                         <label for="slc_damage">Damage</label>
                         <select id="slc_damage">
-                            <option><span class="s">S</span></option>
-                            <option><span class="a">A</span></option>
-                            <option><span class="b">B</span></option>
-                            <option><span class="c">C</span></option>
-                            <option><span class="d">D</span></option>
+                            <option value="50"><span class="s">S</span></option>
+                            <option value="40"><span class="a">A</span></option>
+                            <option value="30"><span class="b">B</span></option>
+                            <option value="20"><span class="c">C</span></option>
+                            <option value="10"><span class="d">D</span></option>
                         </select>
                     </div>
                     <div class="missao-ipt-div">
                         <label for="slc_item_used">Item used</label>
                         <select id="slc_item_used">
-                            <option><span class="s">S</span></option>
-                            <option><span class="a">A</span></option>
-                            <option><span class="b">B</span></option>
-                            <option><span class="c">C</span></option>
-                            <option><span class="d">D</span></option>
+                            <option value="50"><span class="s">S</span></option>
+                            <option value="40"><span class="a">A</span></option>
+                            <option value="30"><span class="b">B</span></option>
+                            <option value="20"><span class="c">C</span></option>
+                            <option value="10"><span class="d">D</span></option>
                         </select>
                     </div>
                     <div class="missao-ipt-div">
                         <button class="missao-button" onclick="registrarMissao()">Registrar missão</button>
                     </div>
                 </div>
-               
+
             </div>
         </div>
-        
+
     </section>
 </body>
 <script>
@@ -120,83 +120,83 @@
     function check() {
         secreta = chk_secreta.checked
         console.log(secreta)
-
-
+        perfil()
 
         if (secreta) {
             slc_missao_numero.innerHTML = `
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>   
+    <option value="1">Missão 1</option>
+    <option value="2">Missão 2</option>
+    <option value="3">Missão 3</option>
+    <option value="4">Missão 4</option>
+    <option value="5">Missão 5</option>
+    <option value="6">Missão 6</option>
+    <option value="7">Missão 7</option>
+    <option value="8">Missão 8</option>
+    <option value="9">Missão 9</option>
+    <option value="10">Missão 10</option>
+    <option value="11">Missão 11</option>
+    <option value="12">Missão 12</option>   
 `
             div_imagem_missao.innerHTML = `<img src="assets/missoes/secretas/DMC3_Secret_Mission_01.jpg">`
             div_input.innerHTML = `
-    <label  class="missao-chk-label" for="chk_completa">Missão completa</label>
+    <div class="div_nome_secreto" id="div_nome"></div>
+    <label  class="missao-chk-label" for="chk_completa">Missão completa</label> 
     <input type="checkbox" class="missao-chk" id="chk_completa">
-               <button class="missao-button-secreta" onclick="registrarMissao()">Registrar missão</button>
-        `
+    <button class="missao-button-secreta" onclick="registrarMissao()">Registrar missão</button>
+    `
 
 
-        } 
-        if(!secreta){
+        }
+
+        if (!secreta) {
             div_imagem_missao.innerHTML = `<img src="assets/missoes/DMC3_Mission_1.jpg"">`
             slc_missao_numero.innerHTML = `
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
+    <option value="1">Missão 1</option>
+    <option value="2">Missão 2</option>
+    <option value="3">Missão 3</option>
+    <option value="4">Missão 4</option>
+    <option value="5">Missão 5</option>
+    <option value="6">Missão 6</option>
+    <option value="7">Missão 7</option>
+    <option value="8">Missão 8</option>
+    <option value="9">Missão 9</option>
+    <option value="10">Missão 10</option>
+    <option value="11">Missão 11</option>
+    <option value="12">Missão 12</option>
+    <option value="13">Missão 13</option>
+    <option value="14">Missão 14</option>
+    <option value="15">Missão 15</option>
+    <option value="16">Missão 16</option>
+    <option value="17">Missão 17</option>
+    <option value="18">Missão 18</option>
+    <option value="19">Missão 19</option>
+    <option value="20">Missão 20</option>`
 
-`
-
-            div_input.innerHTML = `                    <div id="div_nome"></div>
-                    <div class="missao-ipt-div">
-                        <label for="slc_time">Time</label>
-                        <select id="slc_time">
-                            <option value="50"><span class="s">S</span></option>
-                            <option value="40"><span class="a">A</span></option>
-                            <option value="30"><span class="b">B</span></option>
-                            <option value="20"><span class="c">C</span></option>
-                            <option value="10"><span class="d">D</span></option>
-                        </select>
-                    </div>
-                    <div class="missao-ipt-div">
-                        <label for="slc_orb">Orbs</label>
-                        <select id="slc_orb">
-                            <option><span class="s">S</span></option>
-                            <option><span class="a">A</span></option>
-                            <option><span class="b">B</span></option>
-                            <option><span class="c">C</span></option>
-                            <option><span class="d">D</span></option>
-                        </select>
-                    </div>
-                    <div class="missao-ipt-div">
-                        <label for="slc_stylish">Stylish PTS</label>
-                        <select id="slc_stylish">
+            div_input.innerHTML = `                    
+    <div id="div_nome"></div>
+    <div class="missao-ipt-div">
+    <label for="slc_time">Time</label>
+    <select id="slc_time">
+    <option value="50"><span class="s">S</span></option>
+    <option value="40"><span class="a">A</span></option>
+    <option value="30"><span class="b">B</span></option>
+    <option value="20"><span class="c">C</span></option>
+    <option value="10"><span class="d">D</span></option>
+    </select>
+    </div>
+    <div class="missao-ipt-div">
+    <label for="slc_orb">Orbs</label>
+    <select id="slc_orb">
+    <option><span class="s">S</span></option>
+    <option><span class="a">A</span></option>
+    <option><span class="b">B</span></option>
+    <option><span class="c">C</span></option>
+    <option><span class="d">D</span></option>
+    </select>
+    </div>
+    <div class="missao-ipt-div">
+    <label for="slc_stylish">Stylish PTS</label>
+    <select id="slc_stylish">
                             <option><span class="s">S</span></option>
                             <option><span class="a">A</span></option>
                             <option><span class="b">B</span></option>
@@ -227,45 +227,57 @@
                     <div class="missao-ipt-div">
                         <button class="missao-button" onclick="registrarMissao()">Registrar missão</button>
                     </div>
-`          
-}
-perfil()
+`
+        }
+        perfil()
     }
 
 
     function perfil() {
         var icone = sessionStorage.ICON;
         var nome = sessionStorage.NOME_USUARIO;
+        var secreta = chk_secreta.value
         console.log(nome);
         console.log(icone);
-        img_missao_index.innerHTML = `<img class="perfil" src="${icone}">`
-        div_nome.innerHTML = `<p class="missao-perfil-p">${nome}</p>`
+        if (!secreta) {
+            img_missao_index.innerHTML = `<img class="perfil" src="${icone}">`
+            div_nome.innerHTML = `<p class="missao-perfil-p">${nome}</p>`
+        } else {
+            img_missao_index.innerHTML = `<img class="perfil" src="${icone}">`
+            div_nome.innerHTML = `<p class="missao-perfil-p">${nome}</p>`
+        }
 
     }
     perfil()
 
 
-function slc_missao(){
-    secreta = chk_secreta.checked
-    missaoAtual = Number(slc_missao_numero.value )
-    console.log(missaoAtual)
-    
+    function slc_missao() {
+        secreta = chk_secreta.checked
+        missaoAtual = Number(slc_missao_numero.value)
+        console.log(missaoAtual)
 
-    if(!secreta){
-         div_imagem_missao.innerHTML = `<img src="assets/missoes/DMC3_Mission_${missaoAtual}.jpg">`
-             console.log("innerHTML alterado para a imagem");
+
+        if (!secreta) {
+            div_imagem_missao.innerHTML = `<img src="assets/missoes/DMC3_Mission_${missaoAtual}.jpg">`
+            console.log("innerHTML alterado para a imagem");
+        }
+        else {
+            div_imagem_missao.innerHTML = `<img src="assets/missoes/secretas/DMC3_Secret_Mission_0${missaoAtual}.jpg">`
+            console.log("innerHTML alterado para a imagem");
+        }
+
+
     }
-    else{
-    div_imagem_missao.innerHTML = `<img src="assets/missoes/secretas/DMC3_Secret_Mission_0${missaoAtual}.jpg">`
-    console.log("innerHTML alterado para a imagem");
+
+    function voltarMenu() {
+        window.location = 'menu.html'
     }
 
 
-}
 
-function voltarMenu(){
-window.location ='menu.html'
-}
+
+
+
 
 
 </script>

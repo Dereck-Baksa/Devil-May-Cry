@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <section class="dashboard-main">
+        <div id="div_navbar" class="dashboard-navbar">
+            <div onclick="voltarMenu()">
+                <img class="dashboard-navbar-img" src="assets/icon/3.png">
+            </div>
+            <div class="dashboard-icon-container" id="div_container_icon">
+
+                <img class="dashboard-navbar-icon" src="assets/icons/dante-devil-may.jpg">
+            </div>
+        </div>
+        <div id="div_graficos" class="dashboard-graficos">
+
+
+            <div id="div_graficoGeral" class="grafico-geral">
+                <canvas id="graficoGeral"></canvas>
+
+            </div>
+
+
+            <div class="grafico-missao" id="div_lista_de_missoe">
+                <select name="slc_missoes">
+                    <option value="1">Missão 1</option>
+                    <option value="2">Missão 2</option>
+                    <option value="3">Missão 3</option>
+                    <option value="4">Missão 4</option>
+                    <option value="5">Missão 5</option>
+                    <option value="6">Missão 6</option>
+                    <option value="7">Missão 7</option>
+                    <option value="8">Missão 8</option>
+                    <option value="9">Missão 9</option>
+                    <option value="11">Missão 11</option>
+                    <option value="10">Missão 10</option>
+                    <option value="12">Missão 12</option>
+                    <option value="13">Missão 13</option>
+                    <option value="14">Missão 14</option>
+                    <option value="15">Missão 15</option>
+                    <option value="16">Missão 16</option>
+                    <option value="17">Missão 17</option>
+                    <option value="18">Missão 18</option>
+                    <option value="19">Missão 19</option>
+                    <option value="20">Missão 20</option>
+                </select>
+                <canvas id="graficoMissao"></canvas>
+            </div>
+        </div>
+
+        <div id="div_kpi" class="kpi">
+            <div class="kpi-main">
+                <h1>MISSÔES SECRETAS</h1>
+                <p id="p_contadorMissaoSecreta"></p>
+                <div class="kpi-container">
+                    <div id="div_secreta_missao1" class="kpi-missao-secreta">1</div>
+                    <div id="div_secreta_missao2" class="kpi-missao-secreta">2</div>
+                    <div id="div_secreta_missao3" class="kpi-missao-secreta">3</div>
+                    <div id="div_secreta_missao4" class="kpi-missao-secreta">4</div>
+                    <div id="div_secreta_missao5" class="kpi-missao-secreta">5</div>
+                    <div id="div_secreta_missao6" class="kpi-missao-secreta">6</div>
+                    <div id="div_secreta_missao7" class="kpi-missao-secreta">7</div>
+                    <div id="div_secreta_missao8" class="kpi-missao-secreta">8</div>
+                    <div id="div_secreta_missao9" class="kpi-missao-secreta">9</div>
+                    <div id="div_secreta_missao1" class="kpi-missao-secreta">10</div>
+                    <div id="div_secreta_missao1" class="kpi-missao-secreta">11</div>
+                    <div id="div_secreta_missao1" class="kpi-missao-secreta">12</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    const ctx = document.getElementById('graficoGeral');
+    const ctx1 = document.getElementById('graficoMissao');
+    var labelGeral = [170, 5, 22]
+    var labelsMissao = ['missão 1', 'missão 2', 'missão 3']
+    var labelMissao = [50, 20, 40, 40, 40]
+    var MISS = 12
+
+
+    function criarGraficoGeral() {
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labelsMissao,
+                datasets: [{
+                    label: 'PTs',
+                    data: labelGeral,
+                    borderWidth: 2,
+                    pointRadius: 4,
+                    backgroundColor: 'rgba(255, 0, 0,0.7)',
+                    borderColor: 'rgba(00, 0, 244,0.7)',
+                    color: '#ff0000',
+                    tension: 0.2,
+
+                },
+                ]
+            },
+            options: {
+                scales: {
+                    x: {
+                        grid: {
+                            ticks: {
+                                font: {
+                                    size: 32
+                                }
+                            },
+                            color: '#FF0000',
+                        },
+                    },
+                    y: {
+                        grid: {
+                            color: '#FF0000',
+                            ticks: {
+                                color: '#ff0000',
+                                font: {
+                                    size: 32
+                                }
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                title: {
+                    display: true,
+                    text: 'Gráfico de desempenho nas missões',
+                    color: '#ff0000',
+                    font:{
+                        Size: 50,
+                    },
+                },
+                    legend: {
+                        display: true,
+
+                    }, labels: {
+                        color: '#ff0000',
+
+                    },
+                    font: {
+                        size: 32,
+                    }
+                }
+            }
+        });
+    }
+    function criarGraficoMissao() {
+
+        new Chart(ctx1, {
+            type: 'radar',
+            data: {
+                labels: ['TIME', 'ORBS', 'STYLISH', 'DAMAGE', 'ITEM USED'
+                ],
+                datasets: [{
+                    label: 'desempenho',
+                    data: labelMissao,
+                    borderWidth: 4,
+                    pointRadius: 5,
+                    backgroundColor: 'rgba(00, 0, 255,0.2)',
+                    borderColor: '#ff0000',
+                    color: '#ff0000',
+                    tension: 0,
+
+                }
+                ]
+            },
+            options: {
+                plugins: {
+                title: {
+                    display: true,
+                    text: 'Gráfico de pontos por missão',    
+                    color: '#ff0000'
+                },
+            },
+                scales: {
+                    r: {
+                        grid: {
+                            color: '#Ff0000',
+                            suggestedMin: 10,
+                            suggestedMax: 50,
+                        }, angleLines: {
+                            display: true,
+                            color: '#Ff0000',
+                        }, ticks: {
+                            showLabelBackdrop: false,
+                        }, font: {
+                            weight: 'bold'
+                        }
+                    },
+                },
+            },
+            
+                legend: {
+                    display: true,
+                    labels: {
+                        color: '#ff0000',
+                        font: {
+                            size: 46,
+
+                    }
+                }
+            }
+        });
+    }
+
+
+
+
+
+
+
+
+    function voltarMenu() {
+        window.location = 'menu.html'
+    }
+    function perfil() {
+        var icone = sessionStorage.ICON;
+        var nome = sessionStorage.NOME_USUARIO;
+        div_container_icon.innerHTML = `<img class="dashboard-navbar-icon" src="${icone}">
+                            <p class="dashboard-navbar-nome">${nome}</p>
+    `
+    }
+    function kpi() {
+        p_contadorMissaoSecreta.innerHTML = `${MISS}/12`
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    criarGraficoGeral()
+    criarGraficoMissao()
+    kpi()
+    perfil()
+</script>
+
+</html>
