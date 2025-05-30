@@ -21,7 +21,7 @@
                 <select onchange="trocarIcon()" id="slc_icon">
                     <option value="assets/icons/lady-devil-may.jpg">Lady</option>
                     <option value="assets/icons/dante-devil-may.jpg">Dante</option>
-                    <option value="assets/icons/virgil-devil-may.jpg">Virgil</option>
+                    <option value="assets/icons/vergil-devil-may.jpg">Vergil</option>
                     <option value="assets/icons/arkhan-devil-may.jpg">Arkhan</option>
                     <option value="assets/icons/cerberus-devil-may.jpg">Cerberus</option>
                     <option value="assets/icons/nevan-devil-may.png">Nevan</option>
@@ -86,6 +86,16 @@
             return false;
         }
         
+ if (
+            senhaVar != confirmacaoSenhaVar 
+        ){
+            alert('senha não coincidem')
+            
+            return false;
+        }
+
+
+
         // Enviando o valor da nova input
         fetch("/usuario/cadastrar", {
             method: "POST",

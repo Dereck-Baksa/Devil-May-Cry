@@ -31,7 +31,7 @@
 
 
             <div class="grafico-missao" id="div_lista_de_missoe">
-                <select name="slc_missoes">
+                <select name="select_missoes" id="slc_missoes" onchange="trocarMissao()">
                     <option value="1">Missão 1</option>
                     <option value="2">Missão 2</option>
                     <option value="3">Missão 3</option>
@@ -56,7 +56,7 @@
                 <canvas id="graficoMissao"></canvas>
             </div>
         </div>
-
+        
         <div id="div_kpi" class="kpi">
             <div class="kpi-main">
                 <h1>MISSÔES SECRETAS</h1>
@@ -71,9 +71,9 @@
                     <div id="div_secreta_missao7" class="kpi-missao-secreta">7</div>
                     <div id="div_secreta_missao8" class="kpi-missao-secreta">8</div>
                     <div id="div_secreta_missao9" class="kpi-missao-secreta">9</div>
-                    <div id="div_secreta_missao1" class="kpi-missao-secreta">10</div>
-                    <div id="div_secreta_missao1" class="kpi-missao-secreta">11</div>
-                    <div id="div_secreta_missao1" class="kpi-missao-secreta">12</div>
+                    <div id="div_secreta_missao10" class="kpi-missao-secreta">10</div>
+                    <div id="div_secreta_missao11" class="kpi-missao-secreta">11</div>
+                    <div id="div_secreta_missao12" class="kpi-missao-secreta">12</div>
                 </div>
             </div>
         </div>
@@ -82,21 +82,22 @@
 <script>
     const ctx = document.getElementById('graficoGeral');
     const ctx1 = document.getElementById('graficoMissao');
-    var labelGeral = [170, 5, 22]
-    var labelsMissao = ['missão 1', 'missão 2', 'missão 3']
-    var labelMissao = [50, 20, 40, 40, 40]
-    var MISS = 12
+    var missao = 0
+    var graficoMissao
+    var graficoGeral
+    function criarGraficoGeral(missao, media) {
+        
+        for(let i = 0; i < media.length ; i++){
+            media[i] = media[i] / 5
+        }
 
-
-    function criarGraficoGeral() {
-
-        new Chart(ctx, {
+        graficoGeral = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: labelsMissao,
+                labels: missao,
                 datasets: [{
                     label: 'PTs',
-                    data: labelGeral,
+                    data: media,
                     borderWidth: 2,
                     pointRadius: 4,
                     backgroundColor: 'rgba(255, 0, 0,0.7)',
@@ -111,35 +112,40 @@
                 scales: {
                     x: {
                         grid: {
-                            ticks: {
-                                font: {
-                                    size: 32
-                                }
-                            },
-                            color: '#FF0000',
+                               color: '#FF0000',
                         },
+                        ticks: {
+                        font: {
+                                    size: 20
+                                },
+                                  size: 20,
+                                  color: '#0000ff',
+                            },
+                         
                     },
                     y: {
                         grid: {
                             color: '#FF0000',
-                            ticks: {
-                                color: '#ff0000',
-                                font: {
-                                    size: 32
-                                }
+                        },
+                        ticks: {
+                            color: '#ff0000',
+                            font: {
+                                size: 20
                             }
-                        }
+                        },
+                        suggestedMin: 10,
+                        suggestedMax: 50,   
                     }
                 },
                 plugins: {
-                title: {
-                    display: true,
-                    text: 'Gráfico de desempenho nas missões',
-                    color: '#ff0000',
-                    font:{
-                        Size: 50,
-                    },
-                },
+                    title: {
+                        display: true,
+                        text: 'Gráfico de desempenho nas missões',
+                        color: '#ff0000',
+                        font: {
+                            Size: 50,
+                        },
+                           },
                     legend: {
                         display: true,
 
@@ -150,20 +156,21 @@
                     font: {
                         size: 32,
                     }
+                 
                 }
             }
         });
     }
-    function criarGraficoMissao() {
+    function criarGraficoMissao(datasetsMissao) {
 
-        new Chart(ctx1, {
+        graficoMissao = new Chart(ctx1, {
             type: 'radar',
             data: {
                 labels: ['TIME', 'ORBS', 'STYLISH', 'DAMAGE', 'ITEM USED'
                 ],
                 datasets: [{
                     label: 'desempenho',
-                    data: labelMissao,
+                    data: datasetsMissao,
                     borderWidth: 4,
                     pointRadius: 5,
                     backgroundColor: 'rgba(00, 0, 255,0.2)',
@@ -176,50 +183,43 @@
             },
             options: {
                 plugins: {
-                title: {
-                    display: true,
-                    text: 'Gráfico de pontos por missão',    
-                    color: '#ff0000'
+                    title: {
+                        display: true,
+                        text: 'Gráfico de pontos por missão',
+                        color: '#ff0000'
+                    },
                 },
-            },
                 scales: {
                     r: {
                         grid: {
                             color: '#Ff0000',
-                            suggestedMin: 10,
-                            suggestedMax: 50,
                         }, angleLines: {
                             display: true,
+
                             color: '#Ff0000',
                         }, ticks: {
                             showLabelBackdrop: false,
                         }, font: {
                             weight: 'bold'
-                        }
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 50,
                     },
                 },
             },
-            
-                legend: {
-                    display: true,
-                    labels: {
-                        color: '#ff0000',
-                        font: {
-                            size: 46,
+
+            legend: {
+                display: true,
+                labels: {
+                    color: '#ff0000',
+                    font: {
+                        size: 46,
 
                     }
                 }
             }
         });
     }
-
-
-
-
-
-
-
-
     function voltarMenu() {
         window.location = 'menu.html'
     }
@@ -227,38 +227,116 @@
         var icone = sessionStorage.ICON;
         var nome = sessionStorage.NOME_USUARIO;
         div_container_icon.innerHTML = `<img class="dashboard-navbar-icon" src="${icone}">
-                            <p class="dashboard-navbar-nome">${nome}</p>
-    `
+        <p class="dashboard-navbar-nome">${nome}</p>
+        `
     }
-    function kpi() {
-        p_contadorMissaoSecreta.innerHTML = `${MISS}/12`
+    function kpi(numero_missao) {
+    
+        for(let i = 0; i < 12; i ++){
+            if(numero_missao[i] == 1){
+                div_secreta_missao1.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }else if(numero_missao[i] == 2){
+                div_secreta_missao2.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }else if(numero_missao[i] == 3){
+                div_secreta_missao3.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }else if(numero_missao[i] == 4){
+                div_secreta_missao4.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }else if(numero_missao[i] == 5){
+                div_secreta_missao5.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }else if(numero_missao[i] == 6){
+                div_secreta_missao6.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }else if(numero_missao[i] == 7){
+                div_secreta_missao7.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }else if(numero_missao[i] == 8){
+                div_secreta_missao8.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }else if(numero_missao[i] == 9){
+                div_secreta_missao9.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }else if(numero_missao[i] == 10){
+                div_secreta_missao10.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }else if(numero_missao[i] == 11){
+                div_secreta_missao11.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }else if(numero_missao[i] == 12){
+                div_secreta_missao12.innerHTML = `<img src="assets/estrela_DMC.webp">`
+            }
+
+        }
+        
+        p_contadorMissaoSecreta.innerHTML = `${numero_missao.length}/12`
+    }
+    function buscarDesempenhoGeral() {
+        var idVar = sessionStorage.ID_USUARIO;
+
+        fetch(`/dashboard/buscarDesempenhoGeral/${idVar}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (response) {
+                        console.log(response)
+                        let missao = response.map(item => item.missao);
+                        let media = response.map(item => item.media);
+                        criarGraficoGeral(missao, media)
+                    });
+                }
+            });
+    }
+    function buscarDesempenhoMissao() {
+        var idVar = sessionStorage.ID_USUARIO;
+
+
+        fetch(`/dashboard/buscarDesempenhoMissao/${idVar}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (response) {
+                        console.log(response)
+                        let missao = response.map(item => item.missao);
+                        let time = response.map(item => item.time);
+                        let orbs = response.map(item => item.orbs);
+                        let stylish = response.map(item => item.stylish);
+                        let damage = response.map(item => item.damage);
+                        let item = response.map(item => item.item);
+
+                        trocarGrafico(missao, time, orbs, stylish, damage, item)
+
+                    });
+                }
+            });
+    }
+    function buscarKPI() {
+        var idVar = sessionStorage.ID_USUARIO;
+
+        fetch(`/dashboard/buscarKPI/${idVar}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (response) {
+                        console.log(response)
+                        let concluidas = response.map(item => item.numero_missao);
+                        kpi(concluidas)
+                    });
+                }
+            });
+    }
+    function trocarGrafico(missao, time, orbs, stylish, damage, item) {
+        let missaoAtual = slc_missoes.value
+        let datasetsMissao
+
+        for (let i = 0; i < missao.length; i++) {
+            if (missao[i] == missaoAtual) {
+                datasetsMissao = [time[i], orbs[i], stylish[i], damage[i], item[i]]
+            }
+        }
+
+
+        criarGraficoMissao(datasetsMissao)
+    }
+    function trocarMissao() {
+        graficoMissao.destroy()
+        buscarDesempenhoMissao()
     }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    criarGraficoGeral()
-    criarGraficoMissao()
-    kpi()
     perfil()
+    buscarKPI()
+    buscarDesempenhoMissao()
+    buscarDesempenhoGeral()
 </script>
-
 </html>

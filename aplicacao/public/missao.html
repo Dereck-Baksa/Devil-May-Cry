@@ -45,7 +45,7 @@
                             <option value="19">Missão 19</option>
                             <option value="20">Missão 20</option>
                         </select>
-                        <input class="missao-img-input" type="checkbox" onchange="check()" id="chk_secreta">
+                        <input class="missao-img-input" type="checkbox" onchange="checkSecreta()" id="chk_secreta">
                         <label class="missao-img-label" for="chk_secreta">Missão secreta</label>
 
                     </div>
@@ -116,8 +116,7 @@
 <script>
     var secreta = false
 
-
-    function check() {
+    function checkSecreta() {
         secreta = chk_secreta.checked
         console.log(secreta)
         perfil()
@@ -172,56 +171,55 @@
     <option value="19">Missão 19</option>
     <option value="20">Missão 20</option>`
 
-            div_input.innerHTML = `                    
-    <div id="div_nome"></div>
-    <div class="missao-ipt-div">
-    <label for="slc_time">Time</label>
-    <select id="slc_time">
-    <option value="50"><span class="s">S</span></option>
-    <option value="40"><span class="a">A</span></option>
-    <option value="30"><span class="b">B</span></option>
-    <option value="20"><span class="c">C</span></option>
-    <option value="10"><span class="d">D</span></option>
-    </select>
-    </div>
-    <div class="missao-ipt-div">
-    <label for="slc_orb">Orbs</label>
-    <select id="slc_orb">
-    <option><span class="s">S</span></option>
-    <option><span class="a">A</span></option>
-    <option><span class="b">B</span></option>
-    <option><span class="c">C</span></option>
-    <option><span class="d">D</span></option>
-    </select>
-    </div>
-    <div class="missao-ipt-div">
-    <label for="slc_stylish">Stylish PTS</label>
-    <select id="slc_stylish">
-                            <option><span class="s">S</span></option>
-                            <option><span class="a">A</span></option>
-                            <option><span class="b">B</span></option>
-                            <option><span class="c">C</span></option>
-                            <option><span class="d">D</span></option>
+            div_input.innerHTML = `    <div id="div_nome"></div>
+                    <div class="missao-ipt-div">
+                        <label for="slc_time">Time</label>
+                        <select id="slc_time">
+                            <option value="50"><span class="s">S</span></option>
+                            <option value="40"><span class="a">A</span></option>
+                            <option value="30"><span class="b">B</span></option>
+                            <option value="20"><span class="c">C</span></option>
+                            <option value="10"><span class="d">D</span></option>
+                        </select>
+                    </div>
+                    <div class="missao-ipt-div">
+                        <label for="slc_orb">Orbs</label>
+                        <select id="slc_orb">
+                            <option value="50"><span class="s">S</span></option>
+                            <option value="40"><span class="a">A</span></option>
+                            <option value="30"><span class="b">B</span></option>
+                            <option value="20"><span class="c">C</span></option>
+                            <option value="10"><span class="d">D</span></option>
+                        </select>
+                    </div>
+                    <div class="missao-ipt-div">
+                        <label for="slc_stylish">Stylish PTS</label>
+                        <select id="slc_stylish">
+                            <option value="50"><span class="s">S</span></option>
+                            <option value="40"><span class="a">A</span></option>
+                            <option value="30"><span class="b">B</span></option>
+                            <option value="20"><span class="c">C</span></option>
+                            <option value="10"><span class="d">D</span></option>
                         </select>
                     </div>
                     <div class="missao-ipt-div">
                         <label for="slc_damage">Damage</label>
                         <select id="slc_damage">
-                            <option><span class="s">S</span></option>
-                            <option><span class="a">A</span></option>
-                            <option><span class="b">B</span></option>
-                            <option><span class="c">C</span></option>
-                            <option><span class="d">D</span></option>
+                            <option value="50"><span class="s">S</span></option>
+                            <option value="40"><span class="a">A</span></option>
+                            <option value="30"><span class="b">B</span></option>
+                            <option value="20"><span class="c">C</span></option>
+                            <option value="10"><span class="d">D</span></option>
                         </select>
                     </div>
                     <div class="missao-ipt-div">
                         <label for="slc_item_used">Item used</label>
                         <select id="slc_item_used">
-                            <option><span class="s">S</span></option>
-                            <option><span class="a">A</span></option>
-                            <option><span class="b">B</span></option>
-                            <option><span class="c">C</span></option>
-                            <option><span class="d">D</span></option>
+                            <option value="50"><span class="s">S</span></option>
+                            <option value="40"><span class="a">A</span></option>
+                            <option value="30"><span class="b">B</span></option>
+                            <option value="20"><span class="c">C</span></option>
+                            <option value="10"><span class="d">D</span></option>
                         </select>
                     </div>
                     <div class="missao-ipt-div">
@@ -232,13 +230,10 @@
         perfil()
     }
 
-
     function perfil() {
         var icone = sessionStorage.ICON;
         var nome = sessionStorage.NOME_USUARIO;
         var secreta = chk_secreta.value
-        console.log(nome);
-        console.log(icone);
         if (!secreta) {
             img_missao_index.innerHTML = `<img class="perfil" src="${icone}">`
             div_nome.innerHTML = `<p class="missao-perfil-p">${nome}</p>`
@@ -248,15 +243,13 @@
         }
 
     }
-    perfil()
-
-
+    
     function slc_missao() {
         secreta = chk_secreta.checked
         missaoAtual = Number(slc_missao_numero.value)
         console.log(missaoAtual)
-
-
+        
+        
         if (!secreta) {
             div_imagem_missao.innerHTML = `<img src="assets/missoes/DMC3_Mission_${missaoAtual}.jpg">`
             console.log("innerHTML alterado para a imagem");
@@ -265,21 +258,109 @@
             div_imagem_missao.innerHTML = `<img src="assets/missoes/secretas/DMC3_Secret_Mission_0${missaoAtual}.jpg">`
             console.log("innerHTML alterado para a imagem");
         }
-
-
+        
+        
     }
-
+    
     function voltarMenu() {
         window.location = 'menu.html'
     }
 
+    function registrarMissao(){
+        secreta = chk_secreta.checked
+
+        if(!secreta){
+            missaoUpdate()
+        }else{
+            missaoSecretaUpdate()
+        }
 
 
 
+    }
+
+    function missaoUpdate(){
+    
+        var timeVar = slc_time.value;
+        var orbsVar = slc_orb.value;
+        var stylishVar = slc_stylish.value;
+        var damageVar = slc_damage.value;
+        var item_usedVar = slc_item_used.value;
+        var idVar = sessionStorage.ID_USUARIO;
+        var num_missaoVar = slc_missao_numero.value;
+   
+    
+        fetch("/missoes/missaoUpdate",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                timeServer: timeVar,
+                orbsServer: orbsVar,
+                stylishServer: stylishVar,
+                damageServer: damageVar,
+                item_usedServer: item_usedVar,
+                idServer: idVar,
+               num_missaoServer: num_missaoVar
+            }),
+        })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+            
+            if (resposta.ok) { 
+            console.log('update') 
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
+        .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+    
+    return false;
 
 
 
+    }
 
+    function missaoSecretaUpdate(){
+        var missaoCompleta = false
+        missaoCompleta = chk_completa.checked
+        var num_missaoVar = slc_missao_numero.value
+        var idVar = sessionStorage.ID_USUARIO;
+        console.log(num_missaoVar)
+        console.log(idVar)
+    if(missaoCompleta){
+
+        fetch("/missoes/missaoSecretaUpdate",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                idSecretaServer: idVar,
+                 num_missaoSecretaServer: num_missaoVar
+            }),
+        })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+            
+            if (resposta.ok) { 
+                console.log('updateSecreta') 
+            } else {
+                throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+        
+        return false;
+    }
+}
+    
+    perfil()
 </script>
 
 </html>

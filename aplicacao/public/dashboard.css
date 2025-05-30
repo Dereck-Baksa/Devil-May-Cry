@@ -35,7 +35,6 @@ height: 150px;
 }
 
 
-
 .dashboard-icon-container{
   width: 200px;
   height: 150px;
@@ -55,11 +54,11 @@ border: 3px solid rgb(76, 0, 255);
 }
 .dashboard-navbar-nome{
 height: 50px;
-width: 100px;
+width: 300px;
 font-family: Mistral;
 font-size: 27px;
 color: blue;
-align-items: center;
+text-align: center;
 }
 
 .dashboard-navbar-icon{
@@ -164,4 +163,9 @@ justify-content: center;
 font-family: Mistral;
 font-size: 35px;
 color: rgb(255, 0, 0);
+}
+
+.kpi-missao-secreta img{
+width: 29px;
+height: 29px;
 }
