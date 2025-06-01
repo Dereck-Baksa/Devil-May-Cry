@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/icon/3.png">
 </head>
 
 <body>
@@ -36,8 +37,8 @@
                     <h3>EMAIL</h3>
                     <input type="text" id="ipt_emailCadastro">
         
-                    <h3>TELEFONE</h3>
-                   <input type="text" id="ipt_telefoneCadastro">
+                    <h3>DATA DE NASCIMENTO</h3>
+                   <input type="date" id="ipt_dtNascCadastro">
              
                     <h3>SENHA</h3>
                     <input type="password" id="ipt_senhaCadastro">
@@ -60,14 +61,14 @@
     }
     
     function chamarOrdemDeCadastro(){
-        cadastrar()
+          cadastrar()
     }
     
     function cadastrar() {
         
         var nomeVar = ipt_nomeCadastro.value;
         var emailVar = ipt_emailCadastro.value;
-        var telefoneVar = ipt_telefoneCadastro.value;
+        var dtNascVar = ipt_dtNascCadastro.value;
         var senhaVar = ipt_senhaCadastro.value;
         var confirmacaoSenhaVar = ipt_confirmarSenha.value;
         var iconeVar = slc_icon.value;
@@ -76,7 +77,7 @@
         if (
             nomeVar == "" ||
             emailVar == "" ||
-            telefoneVar == "" ||
+            dtNascVar == "" ||
             iconeVar  == "" ||
             senhaVar == "" ||
             confirmacaoSenhaVar == "" 
@@ -105,7 +106,7 @@
             body: JSON.stringify({
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                telefoneServer: telefoneVar,
+                dtNascServer: dtNascVar,
                 senhaServer: senhaVar,
                 iconeServer: iconeVar
             }),

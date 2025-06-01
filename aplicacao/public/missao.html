@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Missão</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/icon/3.png">
 </head>
 
 <body>
@@ -17,7 +18,13 @@
             <div class="missao-div">
 
                 <div class="missao-index">
-                    <div id="img_missao_index" class="missao-perfil-icone"></div>
+                    <div id="img_missao_index" class="missao-perfil-icone">
+                        
+                    </div>
+                       <div id="div_nome">
+
+                    </div>
+                    
                     <div class="missao-img">
                         <div id="div_imagem_missao">
                             <img src="assets/missoes/DMC3_Mission_1.jpg">
@@ -52,7 +59,7 @@
 
                 </div>
                 <div id="div_input" class="missao-input">
-                    <div id="div_nome"></div>
+                 
                     <div class="missao-ipt-div">
                         <label for="slc_time">Time</label>
                         <select id="slc_time">
@@ -138,7 +145,7 @@
 `
             div_imagem_missao.innerHTML = `<img src="assets/missoes/secretas/DMC3_Secret_Mission_01.jpg">`
             div_input.innerHTML = `
-    <div class="div_nome_secreto" id="div_nome"></div>
+    <div id="div_nome"></div>
     <label  class="missao-chk-label" for="chk_completa">Missão completa</label> 
     <input type="checkbox" class="missao-chk" id="chk_completa">
     <button class="missao-button-secreta" onclick="registrarMissao()">Registrar missão</button>
@@ -236,13 +243,13 @@
         var secreta = chk_secreta.value
         if (!secreta) {
             img_missao_index.innerHTML = `<img class="perfil" src="${icone}">`
-            div_nome.innerHTML = `<p class="missao-perfil-p">${nome}</p>`
-        } else {
+            div_nome.innerHTML = `<p id="missao_perfil_p">${nome}</p>`
+        } else if (secreta)
             img_missao_index.innerHTML = `<img class="perfil" src="${icone}">`
-            div_nome.innerHTML = `<p class="missao-perfil-p">${nome}</p>`
+            div_nome.innerHTML = `<p id="missao_perfil_p">${nome}</p>`
         }
 
-    }
+    
     
     function slc_missao() {
         secreta = chk_secreta.checked

@@ -714,16 +714,24 @@ justify-content: center;
 
 }
 
-.missao-perfil-p{
+#div_nome{
+position: absolute;
+top: 100px;
+left: 408px;
+
+
+}
+
+
+#missao_perfil_p{
   margin: 4px;
-  margin-top: 50px;
+  margin-top: 100px;
   font-family:Mistral;
   color: #ffffff;
   text-shadow: 1px 1px 3px rgb(0, 17, 255);
   font-size: 42px;
   
 }
-
 
 
 .missao-main{
@@ -755,7 +763,7 @@ justify-content: center;
 }
 
 .missao-input{
-margin-top: 60px;
+margin-top: 160px;
 height: 700px;
 width: 500px;
 display: flex;
@@ -949,8 +957,8 @@ z-index: 10;
 }
 
 .voltar-menu button{
-width: 200px;
-height: 200px;
+width: 150px;
+height: 150px;
 position: absolute;
 left: 10px;
 top: 30px;
@@ -1220,4 +1228,233 @@ border: 0px;
 border: 0px;
 }
 
+.sm-navbar{
+height: 100px;
+width: 100vw;
+background-color: #4b0404;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
 
+}
+
+.sm-voltar{
+width: 100px;
+height: 100px;
+border: transparent;
+background-color: transparent;
+background-image: url(assets/icon/3.png);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.sm-navbar-p{
+margin-right: 100px;
+font-family: meal;
+font-size: 30px;
+color: rgb(255, 230, 160);
+}
+
+.sm-main{
+width: 100vw;
+height: 100vh;
+
+background-color: transparent;
+background-image: url(assets/background-cadastro.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: flex-start;
+}
+
+.sm-main-img{
+  margin: 50px;
+width:600px;
+height:600px;
+border-radius: 10px;
+background-image: url(assets/Img_devil_may_cry_2001_playstation2_capa.png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+
+
+}
+
+
+
+.sm-main-img-2{
+  margin: 50px;
+  width:600px;
+  height:600px;
+  border-radius: 10px;
+  background-image: url(assets/Devil-May-Cry-3.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+
+
+.sm-main-text{
+  margin: 50px;
+width:650px;
+height:700px;
+border-radius: 10px;
+background-color: #4b0404;
+
+
+}
+.sm-main-text-3{
+  margin: 50px;
+width:90%;
+height:80%;
+border-radius: 10px;
+background-color: #040b4b;
+}
+
+.sm-main-2{
+  width: 100vw;
+height: 100vh;
+
+background-color: transparent;
+background-image: url(assets/background-cadastro.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+flex-direction: row-reverse;
+justify-content: space-evenly;
+align-items: flex-start;
+
+}
+
+.sm-main-3 {
+  width: 100vw;
+height: 50vh;
+
+background-color: transparent;
+background-image: url(assets/background-cadastro.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+flex-direction: row-reverse;
+justify-content: space-evenly;
+align-items: flex-start;
+
+}
+.sm-main-text h1{
+font-family:  Mistral;
+font-size: 30px;
+color: rgb(45, 66, 180);
+margin: 30px;
+text-align: center;
+}
+
+
+.sm-main-text h2{
+font-family:  Mistral;
+font-size: 30px;
+color: rgb(255, 113, 113);
+margin: 30px;
+text-align: center;
+}
+
+.sm-main-text p{
+margin:30px ;
+font-family:  highway gothic condensend;;
+font-size: 30px;
+color: rgb(255, 224, 223);
+}
+
+.sm-main-text-3 h1{
+font-family:  Mistral;
+font-size: 30px;
+color: rgb(255, 241, 113);
+margin: 10px;
+text-align: center;
+}
+
+.sm-main-text-3 h2{
+font-family:  Mistral;
+font-size: 21px;
+color: rgb(113, 215, 255);
+margin: 5px;
+text-align: center;
+}
+
+.sm-main-text-3 p{
+margin:1px ;
+font-family:  highway gothic condensend;;
+font-size: 27px;
+text-align: center;
+color: rgb(255, 224, 223);
+}
+
+.musica-navbar{
+height: 200px;
+width: 100vw;
+ background: linear-gradient(270deg, var(--black) 45.67%, var(--darkred) 77.4%, var(--black) 94.15%);
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items:flex-start;
+
+}
+
+
+.musica-navbar p{
+margin:70px ;
+margin-right: 200px;
+font-family:  highway gothic condensend;;
+font-size: 27px;
+text-align: center;
+color: rgb(255, 224, 223);
+text-shadow: 1px 1px 10px rgb(60, 161, 255);
+}
+.lista-musicas{
+height: 600vh;
+width: 100vw;
+background-color: #040b4b;
+background-image: url(assets/background-missao.avif);
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
+
+}
+
+
+.musica{
+  width: 700px;
+  height: 500px;
+  margin: 30px;
+background-color: #040b4b;
+border: 5px solid blue;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+
+}
+
+
+.musica p {
+
+margin:5px ;
+font-family:  Meal;
+font-size: 27px;
+text-align: center;
+color: rgb(255, 255, 255);
+text-shadow: 0px 0px 10px rgb(255, 0, 0);
+}
