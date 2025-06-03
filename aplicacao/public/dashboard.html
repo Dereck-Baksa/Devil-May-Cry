@@ -15,7 +15,7 @@
     <section class="dashboard-main">
         <div id="div_navbar" class="dashboard-navbar">
             <div onclick="voltarMenu()">
-                <img class="dashboard-navbar-img" src="assets/icon/3.png">
+                <img class="dashboard-navbar-img cursor" src="assets/icon/3.png">
             </div>
             <div class="dashboard-icon-container" id="div_container_icon">
 
@@ -31,7 +31,7 @@
             </div>
 
 
-            <div class="grafico-missao" id="div_lista_de_missoe">
+            <div class="grafico-missao " id="div_lista_de_missoe">
                 <select name="select_missoes" id="slc_missoes" onchange="trocarMissao()">
                     <option value="1">Missão 1</option>
                     <option value="2">Missão 2</option>
@@ -267,13 +267,13 @@
     function buscarDesempenhoGeral() {
         var idVar = sessionStorage.ID_USUARIO;
 
-        fetch(`/dashboard/buscarDesempenhoGeral/${idVar}`, { cache: 'no-store' })
+        fetch(`/dashboard/buscarDesempenhoGeral/${idVar}`)
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (response) {
                         console.log(response)
-                        let missao = response.map(item => item.missao);
-                        let media = response.map(item => item.media);
+                        let missao = response.map(numeroMissao => numeroMissao.missao);
+                        let media = response.map(medidaPorMissao => medidaPorMissao.media);
                         criarGraficoGeral(missao, media)
                     });
                 }
@@ -283,17 +283,17 @@
         var idVar = sessionStorage.ID_USUARIO;
 
 
-        fetch(`/dashboard/buscarDesempenhoMissao/${idVar}`, { cache: 'no-store' })
+        fetch(`/dashboard/buscarDesempenhoMissao/${idVar}`)
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (response) {
                         console.log(response)
-                        let missao = response.map(item => item.missao);
-                        let time = response.map(item => item.time);
-                        let orbs = response.map(item => item.orbs);
-                        let stylish = response.map(item => item.stylish);
-                        let damage = response.map(item => item.damage);
-                        let item = response.map(item => item.item);
+                        let missao = response.map(numeroMissao => numeroMissao.missao);
+                        let time = response.map(timeMedida => timeMedida.time);
+                        let orbs = response.map(orbsMedida => orbsMedida.orbs);
+                        let stylish = response.map(stylishMedida => stylishMedida.stylish);
+                        let damage = response.map(damageMedida => damageMedida.damage);
+                        let item = response.map(itemMedida => itemMedida.item);
 
                         trocarGrafico(missao, time, orbs, stylish, damage, item)
 
@@ -304,7 +304,7 @@
     function buscarKPI() {
         var idVar = sessionStorage.ID_USUARIO;
 
-        fetch(`/dashboard/buscarKPI/${idVar}`, { cache: 'no-store' })
+        fetch(`/dashboard/buscarKPI/${idVar}`)
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (response) {

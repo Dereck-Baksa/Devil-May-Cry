@@ -12,7 +12,7 @@
 <body>
     <section class="menu-main">
         <div class="voltar-index" >
-        <button></button>
+        <button onclick="logout()" class="voltar-index cursor"></button>
         </div>
         
           <div class="menu-sobreposta">
@@ -29,10 +29,10 @@
     
 
     <div class="menu-button">
-        <button class="menu-button" onclick="telaMissao()">Missões</button>
-        <button class="menu-button" onclick="telaDesempenho()">Desempenho</button>
-        <button class="menu-button" onclick="telaMusica()">Musica</button>
-        <button class="menu-button" onclick="TelaSobreMim()">Sobre mim</button>
+        <button class="menu-button cursor" onclick="telaMissao()">Missões</button>
+        <button class="menu-button cursor" onclick="telaDesempenho()">Desempenho</button>
+        <button class="menu-button cursor" onclick="telaMusica()">Musica</button>
+        <button class="menu-button cursor" onclick="TelaSobreMim()">Sobre mim</button>
     </div>
     
 </div>
@@ -54,6 +54,11 @@ function perfil(){
     }
 perfil()
 
+
+function logout(){
+    sessionStorage.clear()
+ window.location = "./index.html" 
+}
 
 
 function telaMissao(){

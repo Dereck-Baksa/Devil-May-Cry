@@ -26,7 +26,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
-background: linear-gradient(270deg, rgb(0, 0, 0) 1.87%, rgb(40, 41, 107) 11.87%, rgb(212, 14, 14) 50.04%, rgb(87, 10, 10) 80.15%);
+background: linear-gradient(270deg, rgb(71, 66, 66) 1.87%, rgb(12, 14, 134) 11.87%, rgb(112, 112, 112) 50.04%, rgb(126, 121, 121) 80.15%);
 }
 .dashboard-navbar-img{
 width: 150px;
@@ -54,7 +54,7 @@ border: 3px solid rgb(76, 0, 255);
 }
 .dashboard-navbar-nome{
 height: 50px;
-width: 300px;
+width: 100px;
 font-family: Mistral;
 font-size: 27px;
 color: blue;
@@ -104,6 +104,7 @@ text-shadow: 1px 1px 1px black;
 font-family: highway gothic condensend;
 font-size: 20px;
 color: rgb(255, 0, 0);
+cursor: pointer;
 }
 
 .kpi{

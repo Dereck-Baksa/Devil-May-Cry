@@ -9,11 +9,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/icon/3.png">
 </head>
 
-<body>
-    <section class="cadastro-main">
-        <img class="cadastro-sobreposta" src="assets/dante-capa-dmc-3-hd.png">
-        <div class="cadastro-line1">
 
+<section class="cadastro-main">
+    <img class="cadastro-sobreposta" src="assets/dante-capa-dmc-3-hd.png">
+    <div class="cadastro-line1">
+            <body>
+            
             <div class="cadastro-icone">
                 <div id="div_icon">
                      <img class="cadastro-icone-img" src="assets/icons/lady-devil-may.jpg">
@@ -50,6 +51,7 @@
         </div>
         
         <div class="cadastro-line2">
+            <button onclick="logout()">Voltar</button>
             <button onclick="chamarOrdemDeCadastro()">Cadastrar</button>
         </div>
     </section>
@@ -137,7 +139,7 @@ function buscarId(){
         if (response.ok) {
             response.json().then(function (response) {
                 console.log(response)
-                let id = response.map(item => item.id);
+                let id = response.map(idsRecuperados => idsRecuperados.id);
 
                 cadastroMissao(id)
             });
@@ -163,7 +165,7 @@ function cadastroMissao(id){
         if (resposta.ok) {        
             setTimeout(() => {
                 window.location = "login.html";
-            }, "2000");
+            }, "500");
             
         } else {
             throw "Houve um erro ao tentar realizar o cadastro!";
@@ -178,6 +180,10 @@ function cadastroMissao(id){
     
     
 } 
+
+function logout(){
+ window.location = "/index.html" 
+}
 
 
 </script>
